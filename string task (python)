@@ -1,0 +1,17 @@
+from math import ceil
+a=input('ENTER PHRASE')
+b=int(input('enter period'))
+c=''
+for i in range(b):
+    c=c+a[i: :b]
+print(c)
+e=''
+l1=len(a)%b # 
+l2=len(a)//b+1 # 
+e1=c[ :l1*l2]
+e2=c[l1*l2: ]
+for i in range(l2):
+    e=e+e1[ : :(l2)]
+    e=e+e2[ : :(l2-1)]
+e=e[ :len(c)]
+print(e)
