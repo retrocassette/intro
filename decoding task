@@ -1,0 +1,27 @@
+from random import randint
+alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+deciphrator=[]
+old_phrase=input('enter shit to cipher').lower()
+new_phrase=''
+for c in old_phrase:
+    if c in alphabet:
+        x=randint(1,25)
+        if alphabet.index(c)+x <= 25:
+            new_phrase+=alphabet[alphabet.index(c)+x]
+        else:
+            new_phrase+=alphabet[(alphabet.index(c)+x)%26-1]
+        deciphrator.append(x)
+    else:
+        new_phrase+=c
+        deciphrator.append(c)
+print(new_phrase)
+print(deciphrator)
+
+decipheredphrase=''
+for i in range(len(new_phrase)):
+    if new_phrase[i] in alphabet:
+        if alphabet.index(new_phrase[i])-deciphrator[i] >= 0:
+            decipheredphrase+=alphabet[alphabet.index(new_phrase[i])-deciphrator[i]]
+        else: decipheredphrase+=alphabet[alphabet.index(new_phrase[i])-deciphrator[i]+1]
+    else: decipheredphrase+=new_phrase[i]
+print(decipheredphrase)
