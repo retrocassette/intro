@@ -6,7 +6,6 @@ print(L)
 M = [otvety[voprosy.index(i)] for i in L]
 print(M)
 counter=0
-a=''
 for i in range(4):
     print('Вопрос', i+1, ':', L[i])
     if input() == M[i]:
