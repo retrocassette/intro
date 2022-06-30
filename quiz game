@@ -1,0 +1,16 @@
+voprosy = ['shit?', 'hate?', 'fuck?', 'mama?', 'arara?', 'cat?', 'papapa?', 'rarar?', 'nonono?', 'kakaka?']
+otvety = ['shit!', 'hate!', 'fuck!', 'mama!', 'arara!', 'cat!', 'papapa!', 'rarar!', 'nonono!', 'kakaka!']
+from random import sample
+L = sample(voprosy, 4)
+print(L)
+M = [otvety[voprosy.index(i)] for i in L]
+print(M)
+counter=0
+a=''
+for i in range(4):
+    print('Вопрос', i+1, ':', L[i])
+    if input() == M[i]:
+        print('Верно!')
+        counter+=1
+    else: print('ФУУУУ ЛООХ')
+print(f'У вас {counter} правильных ответов')
