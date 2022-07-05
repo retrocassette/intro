@@ -1,0 +1,20 @@
+from random import randint
+from pprint import pprint
+L = []
+N=[]
+while len(L) <9:
+    a=randint(1,9)
+    if a not in L: L.append(a)
+N.append(L)
+for i in range(8):
+    M=[]
+    b =0
+    while len(M)<9:
+        b=len(M)
+        a=randint(1,9)
+        C = [N[i][len(M)] for i in range(len(N))]
+        if a not in M and a not in C:
+            M.append(a)
+        elif a in M or a in C and len(M)==8: M=[]
+    N.append(M)
+pprint(N)
